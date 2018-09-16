@@ -1,0 +1,29 @@
+body{
+  background-size: 100%;
+  object-fit: cover;
+	background-image: url(../image/1.jpeg);
+  background-repeat: no-repeat;
+  font-family: Raleway, Open Sans, Droid Sans, arial, sans-serif;
+  background-attachment: fixed;
+}
+
+.bg-content{
+	background-color: white;
+	position: relative;
+	padding: 7rem;
+	top: 11rem;
+	/*color: #fff;*/
+	opacity: 0.2;
+  	filter: blur(5px);
+  	-webkit-filter: blur(5px);
+}
+h1{
+    font-size: 5rem;
+    font-family: arial;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-size: 280vw;
+    margin: 6em auto; }
+}

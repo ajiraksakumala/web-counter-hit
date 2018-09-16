@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tugas Web Empat</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+	<div class="bg-content" align="center">
+	</div>
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-12">
+				<h1 id="val"></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6" align="right">
+				<button class="btn btn-primary my-2 my-sm-0" type="submit" id="plus">Tambah</button>
+			</div>
+			<div class="col-6" align="left">
+				<button class="btn btn-primary my-2 my-sm-0" type="submit" id="minus">Kurang</button>
+			</div>
+		</div>
+	</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+	const plus = document.getElementById('plus')
+	const minus = document.getElementById('minus')
+	const val = document.getElementById('val')
+	let number = parseInt(localStorage.getItem("number"))
+	if (isNaN(number)) {
+		number = 0;
+	}
+	
+	console.log(number)
+	val.innerHTML = number
+
+	plus.addEventListener('click', function () {
+		number += 1;
+		val.innerHTML = number
+		// body...
+		localStorage.setItem('number', number)
+		sessionStorage.setItem('number', number)
+	})
+	minus.addEventListener('click', function () {
+		if (number > 0) {
+			number -= 1;
+			val.innerHTML = number
+			// body...
+			localStorage.setItem('number', number)
+			sessionStorage.setItem('number', number)
+		} else {
+			alert('Maaf counter tidak bisa kurang dari 0')
+		}	
+	})
+</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
